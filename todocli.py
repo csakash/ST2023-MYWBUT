@@ -106,10 +106,59 @@ while True:
 
             print(temp["tasks"])
         elif cmd == "update":
-            pass
+            task_id = input("Enter the task id that you want to update: ")
+            target_task_index = 0
+            for task in data["tasks"]:
+                if task_id == str(task["task_id"]):
+                    print(task)
+                    target_task_index = data["tasks"].index(task)
+                else:
+                    continue
+
+            update_input = input("update>> What do you want to change? (task_name/time/status)")
+
+            if update_input == "task_name":
+                updated_task_name = input("Please enter updated task name: ")
+                data["tasks"][target_task_index]["task_name"] = updated_task_name
+
+            elif update_input == "time":
+                updated_time = input("Please enter updated task time: ")
+                data["tasks"][target_task_index]["time"] = updated_time
+
+            else:
+                updated_status = input("Change your task status to: ")
+                data["tasks"][target_task_index]["completed"] = updated_status
+
+            todoData = data
+            with open("todoDB.json", "r+") as f:
+                json.dump(todoData, f, indent=4)
+            
+            print("Task updated successfully")
+            print("here's your updated task: ")
+            print(data["tasks"][target_task_index])
+
+            
             #enter the logic of update
         elif cmd == "delete-task":
-            pass
+            task_id = input("Enter the task id that you want to delete: ")
+            
+            target_task = {}
+            for task in data["tasks"]:
+                if task_id == str(task["task_id"]):
+                    data["tasks"].remove(task)
+                    print("Task deleted successfully")
+                else:
+                    continue
+            
+            print(data["tasks"])
+
+            todoData = data
+            print(todoData)
+            with open("todoDB.json", "r+") as f:
+                json.dump(todoData, f, indent=4)
+        # elif cmd == "reset":
+
+                    
 
 
 

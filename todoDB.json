@@ -4,27 +4,22 @@
     "tasks": [
         {
             "task_id": 1,
-            "task_name": "Take morning medicine",
-            "time": "0700",
+            "task_name": "task1",
+            "time": "0100",
             "completed": false
         },
         {
             "task_id": 2,
-            "task_name": "Take class",
-            "time": "0900",
+            "task_name": "task-3",
+            "time": "0200",
             "completed": false
         },
         {
             "task_id": 3,
-            "task_name": "Get ready for office",
-            "time": "1130",
-            "completed": false
-        },
-        {
-            "task_id": 4,
-            "task_name": "take lunch",
-            "time": "1300",
+            "task_name": "task-3",
+            "time": "0300",
             "completed": false
         }
     ]
+}
 }
