@@ -21,16 +21,16 @@ class Sensor():
         self.data = {}
         print('Data cleared!')
 
-sensor = Sensor(name="Private Sensor", record_date="2023-07-12")
-sensor2 = Sensor(name="Gyroscope", record_date="2023-04-05")
-print(sensor.name, sensor.record_date)
-# print(sensor.__location)
-sensor.get_location()
-sensor.set_location(new_location="Hyderabad")
-# class Accelerometer(Sensor):
-#     def __init__(self, name, location, record_date, brand):
-#         super().__init__(name, location, record_date)
-#         self.brand = brand
+# sensor = Sensor(name="Private Sensor", record_date="2023-07-12")
+# sensor2 = Sensor(name="Gyroscope", record_date="2023-04-05")
+# print(sensor.name, sensor.record_date)
+# # print(sensor.__location)
+# sensor.get_location()
+# sensor.set_location(new_location="Hyderabad")
+class Accelerometer(Sensor):
+    def __init__(self, name, location, record_date, brand):
+        super().__init__(name, location, record_date)
+        self.brand = brand
 
 
 #     def show_sensor_type(self):
